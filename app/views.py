@@ -9,9 +9,9 @@ from django.shortcuts import render, redirect
 
 from .models import Ingresso
 
-def hello_world(request: HttpRequest):
+def reserva_ingresso(request: HttpRequest):
     ingressos_disponiveis = list(pega_ingressos_disponiveis().values())
-    return render(request, 'hello_world.html', {'ingressos_disponiveis':ingressos_disponiveis})
+    return render(request, 'reserva_ingresso.html', {'ingressos_disponiveis':ingressos_disponiveis})
 
 
 @api_view(['GET'])
@@ -45,4 +45,4 @@ def reserva_ingresso(request: HttpRequest):
 
 
     ingressos_disponiveis = list(pega_ingressos_disponiveis().values())
-    return render(request, 'hello_world.html', {'ingressos_disponiveis':ingressos_disponiveis})
+    return render(request, 'reserva_ingresso.html', {'ingressos_disponiveis':ingressos_disponiveis})
