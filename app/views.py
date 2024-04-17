@@ -15,12 +15,9 @@ def reserva_ingresso(request: HttpRequest):
 
 
 @api_view(['GET'])
-def get_ingressos_disponiveis(request: HttpRequest) -> Response:
-    ingressos_disponiveis = pega_ingressos_disponiveis()
-
-    return Response(ingressos_disponiveis)
-
-
+def get_ingressos(request: HttpRequest) -> Response:
+    ingressos = Ingresso.objects.all().values()
+    return Response(ingressos)
 
 
 def pega_ingressos_disponiveis():
